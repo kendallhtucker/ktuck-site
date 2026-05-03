@@ -1,0 +1,424 @@
+/* ktuck.com - Static rebuild */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-size: 19px;
+  line-height: 1.55;
+  color: #000;
+  background: #fff;
+  max-width: none;
+  margin: 0;
+  padding: 24px 48px 16px 96px;
+}
+
+/* Header */
+.site-header {
+  margin-bottom: 16px;
+}
+
+.site-header h1 {
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: #000;
+}
+
+.site-header h1 a {
+  color: #000;
+  text-decoration: none;
+}
+
+.site-header .subtitle {
+  font-size: 14px;
+  color: #999;
+  font-style: italic;
+  margin-top: 2px;
+}
+
+/* Section headers */
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  text-decoration: underline;
+  margin-bottom: 4px;
+  margin-top: 0;
+}
+
+.post-title {
+  font-size: 34px;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+  margin-bottom: 24px;
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+h2:first-of-type {
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 36px;
+}
+
+/* Links - default: no underline */
+a {
+  color: #000;
+  text-decoration: underline;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* In-text links (inside paragraphs) get underlines */
+p a {
+  text-decoration: underline;
+  color: #000;
+}
+
+/* Link color classes */
+.link-lime { color: #bada55; }
+.link-pink { color: #ff6181; }
+.link-cyan { color: #01b5d6; }
+.link-yellow { color: #ffbb00; }
+.link-gray { color: #767676; }
+.link-green { color: #5cc8a5; }
+
+/* Paragraphs */
+p {
+  margin-bottom: 1.4em;
+}
+
+/* Lists */
+ul, ol {
+  margin-bottom: 4px;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 2px;
+}
+
+.spaced-list > li {
+  margin-bottom: 16px;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.img-center {
+  display: block;
+  margin: 24px auto;
+}
+
+.img-right {
+  float: right;
+  margin: 28px 100px 40px 120px;
+  max-width: 340px;
+}
+
+.fig-right {
+  float: right;
+  margin: 12px 0 24px 60px;
+  max-width: 460px;
+  text-align: center;
+}
+
+.fig-right img {
+  width: 100%;
+  display: block;
+}
+
+.fig-right figcaption {
+  font-size: 14px;
+  color: #999;
+  font-style: italic;
+  margin-top: 6px;
+}
+
+.fig-left {
+  float: left;
+  margin: 12px 60px 24px 0;
+  max-width: 460px;
+  text-align: center;
+}
+
+.fig-left img {
+  width: 100%;
+  display: block;
+}
+
+.fig-left figcaption {
+  font-size: 14px;
+  color: #999;
+  font-style: italic;
+  margin-top: 6px;
+}
+
+.img-caption {
+  font-size: 14px;
+  color: #999;
+  font-style: italic;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.caption-italic {
+  font-style: italic;
+  text-align: center;
+  margin: 8px auto 24px;
+  max-width: 720px;
+}
+
+.italic-section {
+  font-style: italic;
+}
+
+.italic-section .scene-context,
+.italic-section h3 {
+  font-style: normal;
+}
+
+.photo-with-bubble {
+  position: relative;
+  display: block;
+  max-width: 500px;
+  margin: 24px auto;
+}
+
+.photo-with-bubble img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
+.speech-bubble {
+  position: absolute;
+  top: 3%;
+  left: -12%;
+  background: #5fd9e0;
+  color: #000;
+  padding: 18px 24px;
+  border-radius: 24px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 24px;
+  line-height: 1.25;
+  max-width: 60%;
+  transform: rotate(-4deg);
+  box-shadow: 2px 3px 10px rgba(0,0,0,0.12);
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  right: 26px;
+  bottom: -27px;
+  width: 0;
+  height: 0;
+  border-left: 30px solid #5fd9e0;
+  border-bottom: 28px solid transparent;
+}
+
+@media (max-width: 600px) {
+  .photo-with-bubble {
+    max-width: 100%;
+  }
+  .speech-bubble {
+    left: 0;
+    font-size: 16px;
+    padding: 10px 14px;
+  }
+  .speech-bubble::after {
+    right: 18px;
+    bottom: -17px;
+    border-left: 20px solid #5fd9e0;
+    border-bottom: 18px solid transparent;
+  }
+}
+
+/* Photo grid */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+/* Section dividers */
+.section {
+  margin-bottom: 14px;
+}
+
+/* Blog post list */
+.post-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.post-list li {
+  margin-bottom: 1px;
+}
+
+/* Media list */
+.media-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.media-list li {
+  margin-bottom: 1px;
+  color: #01b5d6;
+}
+
+.media-list .outlet {
+  font-weight: 500;
+}
+
+/* Back to home link */
+.back-home {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 8px 18px;
+  border: 1px solid #333;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #333;
+  transition: background 0.2s, color 0.2s;
+}
+
+.back-home:hover {
+  background: #ff6181;
+  color: #fff;
+  border-color: #ff6181;
+}
+
+/* Blockquote for literary passages */
+blockquote {
+  border-left: 3px solid #ddd;
+  margin: 20px 0;
+  padding: 12px 20px;
+  font-style: italic;
+  color: #555;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+  font-size: 14px;
+  color: #999;
+}
+
+/* Numbered steps */
+.step-title {
+  font-weight: 500;
+  margin-top: 28px;
+  margin-bottom: 8px;
+}
+
+/* Pro tips */
+.pro-tip {
+  background: #f8f8f8;
+  border-left: 3px solid #333;
+  padding: 12px 16px;
+  margin: 16px 0;
+  font-size: 16px;
+}
+
+.pro-tip strong {
+  font-weight: 500;
+}
+
+/* Footer */
+.site-footer {
+  margin-top: 60px;
+  padding-top: 0;
+  font-size: 12px;
+  color: #999;
+  text-align: left;
+}
+
+.site-footer .copyright {
+  text-align: center;
+  color: #000;
+}
+
+.site-footer .footnote {
+  font-size: 11px;
+  font-style: italic;
+  color: #bbb;
+  margin-bottom: 8px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  body {
+    padding: 24px 16px 8px;
+  }
+
+  main img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .site-footer {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .site-footer .footnote {
+    text-align: center;
+  }
+
+  .img-right {
+    float: none;
+    display: block;
+    max-width: 80%;
+    margin: 0 auto 20px;
+  }
+
+  .fig-right,
+  .fig-left {
+    float: none;
+    max-width: 80%;
+    margin: 0 auto 24px;
+  }
+
+  .section:has(.img-right) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section:has(.img-right) .img-right {
+    order: -1;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
